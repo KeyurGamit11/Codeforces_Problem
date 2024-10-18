@@ -1,0 +1,43 @@
+Problem link : https://codeforces.com/problemset/problem/1900/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 16-10-2024
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+//simple if we found "..." means ans is 0 else ans is total num of '.'
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	string s;
+    	cin>>s;
+    	int cnt=0;
+    	int consectivecnt=0;
+    	for(int i=0; i<n; i++){
+    		if(s[i]=='.'){
+    			cnt++;
+    			consectivecnt++;
+    			if(consectivecnt==3){
+    				break;
+    			}
+    		}
+    		else{
+    			consectivecnt=0;
+    		}
+    	}
+    	if(consectivecnt==3){
+    		cout<<2<<endl;
+    	}
+    	else{
+    		cout<<cnt<<endl;
+    	}
+    }
+    return 0;
+}
