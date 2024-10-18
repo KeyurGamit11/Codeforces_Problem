@@ -1,0 +1,45 @@
+Problem link: https://codeforces.com/contest/1857/problem/A
+#code:
+#include<bits/stdc++.h>
+using namespace std;
+
+bool Even(int n){
+	if(n%2==0){
+        return true;
+	}else{
+		return false;
+	}
+}
+
+void solve(){
+	int n;
+	cin>>n;
+	vector<int>a(n);
+	for(auto &i:a){
+		cin>>i;
+	}
+	int Oddsum=0 , Evensum=0;
+	for(int i=0; i<n; i++){
+		if(a[i]%2==0){
+			Evensum += a[i];
+		}
+		else{
+			Oddsum += a[i];
+		}
+	}
+    if(Even(Evensum) && Even(Oddsum)){
+    	cout<<"YES"<<endl;
+    }
+    else{
+    	cout<<"NO"<<endl;
+    }
+}
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		solve();
+	}
+	return 0;
+}
