@@ -1,0 +1,48 @@
+#Problem link : https://codeforces.com/problemset/problem/1789/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 21-10-2024
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int gcd(int a, int b) {
+
+    // Euclidean algorithm to calculate GCD
+    while (b) {
+        a %= b;
+        swap(a, b);
+    }
+    return a;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	vector<int>a(n);
+    	for(int i=0; i<n; i++){
+    		cin>>a[i];
+    	}
+    	int ans=INT_MAX;
+    	for(int i=0; i<n; i++){
+    		for(int j=i+1; j<n; j++){
+    			ans = min(gcd(a[i],a[j]),ans);
+    		}
+    	}
+    	//cout<<ans<<endl;
+    	if(ans>2){
+    		cout<<"NO"<<endl;
+    	}
+    	else{
+    		cout<<"YES"<<endl;
+    	}
+    }
+    return 0;
+}
