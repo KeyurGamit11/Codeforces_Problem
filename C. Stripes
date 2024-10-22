@@ -1,0 +1,59 @@
+#Problem Link : https://codeforces.com/contest/1742/problem/C
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 22-10-2024
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+//we only need to check if row consist 8 R if yes then ans is R 
+//if not ans is B , do obesrvation
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	vector<vector<char>>mat(8,vector<char>(8));
+    	for(int i=0; i<8; i++){
+    		for(int j=0; j<8; j++){
+    			cin>>mat[i][j];
+    		}
+    	}
+    	/*
+    	for(int i=0; i<8; i++){
+    		for(int j=0; j<8; j++){
+    			cout<<mat[i][j];
+    			cout<<endl;
+    		}
+    		cout<<endl;
+    	} */
+    	bool ch = false;
+    	int Rcnt=0;
+    	for(int i=0; i<8; i++){
+    		Rcnt=0;
+    		for(int j=0 ; j<8; j++){
+    			if(mat[i][j]=='R'){
+    				Rcnt++;
+    			}
+    			else{
+    				continue;
+    			}
+    			if(Rcnt==8){
+    				ch=true;
+    				break;
+    			}
+
+    		}
+    	}
+    	
+    	if(ch){
+    		cout<<"R"<<endl;
+    	}
+    	else{
+    		cout<<"B"<<endl;
+    	}
+    }
+    return 0;
+}
