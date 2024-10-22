@@ -1,0 +1,33 @@
+#Problem Link : https://codeforces.com/contest/1850/problem/D
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main(){
+	ios_base::sync_with_stdio(false); 
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--){
+       int n,k;
+       cin>>n>>k;
+       vector<int>a(n);
+       for(int i=0; i<n; i++){
+       	cin>>a[i];
+       }
+       sort(a.begin() , a.end());
+       int cnt=1 , total=0;
+       for(int i=0; i<n-1; i++){
+       	if(abs(a[i] - a[i+1]) <= k){
+       		cnt++;
+       	}
+       	else{
+             total = max(cnt,total);
+             cnt=1;
+       	}
+       }
+       total = max(cnt,total);
+       cout<<n-total<<endl;
+    }
+    return 0;
+}
