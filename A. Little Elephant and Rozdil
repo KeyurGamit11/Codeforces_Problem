@@ -1,0 +1,36 @@
+#Problem Link : https://codeforces.com/problemset/problem/205/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 24-10-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    for(int i=0; i<n; i++){
+    	cin>>a[i];
+    }
+    int mini = INT_MAX;
+    int minind =0;
+    for(int i=0; i<n; i++){
+    	if(a[i]<mini){
+    		mini = a[i];
+    		minind = i;
+    	}
+    }
+    for(int i=0; i<n; i++){
+    	if(a[i]==mini && i != minind){
+    		cout<<"Still Rozdil"<<endl;
+    		return 0;
+    	}
+    }
+    cout<<minind+1<<endl;
+    return 0;
+}
