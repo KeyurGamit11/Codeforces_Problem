@@ -1,0 +1,46 @@
+#Problem Link : https://codeforces.com/contest/2033/problem/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 25-10-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+//we traverse mat daigonaly
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	vector<vector<int>>mat(n,vector<int>(n));
+    	for(int i=0; i<n; i++){
+    		for(int j=0; j<n; j++){
+    			cin>>mat[i][j];
+    		}
+    	}
+    	int ans=0;
+    	//for row we are traverse daigonal 
+    	for(int i=0; i<n; i++){
+    		int mn=0;
+    		for(int j=0; j<n-i; j++){
+    			mn = min(mn , mat[i+j][j]);
+    		}
+    		ans += abs(mn);
+    	}
+    	//for col we are traverse daigonal 
+    	for(int j=1; j<n; j++){
+    		int mn=0;
+    		for(int i=0; i<n-j; i++){
+    			mn = min(mn , mat[i][j+i]);
+    		}
+    		ans += abs(mn);
+    	}
+
+    	cout<<ans<<endl;
+    }
+    return 0;
+}
