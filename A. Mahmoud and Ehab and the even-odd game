@@ -1,0 +1,20 @@
+#Problem link : https://codeforces.com/problemset/problem/959/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 9-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+//simple if a is even so mahumoud choose n==a and win
+//id a is odd mahumad chose a-1 and its odd so ehad win
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int a;
+    cin>>a;
+    if(a%2==0) cout<<"Mahmoud"<<endl;
+    else cout<<"Ehab"<<endl;
+    return 0;
+}
