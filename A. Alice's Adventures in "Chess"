@@ -1,0 +1,36 @@
+#Problem Link : https://codeforces.com/contest/2028/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 11-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n,a,b;
+    	cin>>n>>a>>b;
+    	string s;
+    	cin>>s;
+    	int x=0,y=0;
+    	bool ch=false;
+    	for(int i=0; i<100*n; i++){ //100*n just for safety we can just take 20 according to ques input
+    		if(s[i%n]=='N') y++; //we are doing i%n for circular traversal
+    		else if(s[i%n]=='E') x++;
+    		else if(s[i%n]=='S') y--;
+    		else  x--;
+    		if(x==a && y==b){
+    			ch = true;
+    		}
+    	}
+    	if(ch) cout<<"YES"<<endl;
+    	else cout<<"NO"<<endl;
+    }
+    return 0;
+}
