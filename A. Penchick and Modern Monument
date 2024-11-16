@@ -1,0 +1,36 @@
+#Problem Link : https://codeforces.com/contest/2031/problem/A
+#code : 
+/**
+ *    author:  Keyur11
+ *    created: 16-10-24 
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+//we need make all element equal to maxfrq so it become asecnding
+//so ans is n-maxfreq
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	vector<int>a(n);
+    	for(int i=0; i<n; i++){
+    		cin>>a[i];
+    	}
+    	int maxfreq=0;
+    	unordered_map<int,int>mp; //to count frq of all
+    	for(auto i:a){
+    		mp[i]++;
+    	}
+    	for(auto &i:mp){
+    		maxfreq = max(i.second ,maxfreq);
+    	}
+    	cout<<n-maxfreq<<endl; 
+    }
+    return 0;
+}
