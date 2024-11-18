@@ -1,0 +1,30 @@
+#problem Link : https://codeforces.com/problemset/problem/1154/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 18-11-24 
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    vector<int>arr(4);
+    for(int i=0; i<4; i++){
+    	cin>>arr[i];
+    }
+    int maxi = *max_element(arr.begin(),arr.end());
+    vector<int>ans;
+    for(int i=0; i<4; i++){
+    	if(arr[i] != maxi){
+    		ans.push_back((maxi-arr[i]));
+    	}
+    }
+    for(auto i:ans){
+    	cout<<i<<" ";
+    }
+
+    return 0;
+}
