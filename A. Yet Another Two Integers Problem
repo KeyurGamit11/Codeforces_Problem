@@ -1,0 +1,36 @@
+#Problem link : https://codeforces.com/problemset/problem/1409/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 19-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+// so ex is if remain is 14 ,we need to devide into 10 , 4 ans is 2
+//so if rem is 10 we need only one move is rem/10
+// //else we need rem/10+1
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int a,b;
+    	cin>>a>>b;
+    	if(a==b){
+    		cout<<"0"<<endl;
+    	}
+    	else{
+    		int remain = abs(a-b);
+    		if(remain%10==0){      
+    			cout<<remain/10<<endl;
+    		}                       
+    		else{
+    			cout<<1+remain/10<<endl;
+    		}
+    	}
+    }    
+    return 0;
+}
