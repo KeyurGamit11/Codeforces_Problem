@@ -1,0 +1,45 @@
+#Problem Link : https://codeforces.com/problemset/problem/1266/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 20-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+//we need to devide by 60 so num should be devide by 3,20 or 2,3,10
+//for 3 dig sum should devide by 3
+//for 20 ,atlease 1 zero , and 2 even num(including 0)
+//take string to make easy
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	string s;
+    	cin>>s;
+    	int sum=0,Even_cnt=0,Zero_cnt=0;
+    	for(int i=0; i<s.size(); i++){
+    		if((s[i]-'0')%2==0){
+    			Even_cnt++;
+    		}
+    		if((s[i]-'0')==0){
+    			Zero_cnt++;
+    		}
+    		sum += (s[i]-'0');
+    	}
+    	//cout<<sum<<Even_cnt<<Zero_cnt<<endl;
+    	if(sum%3==0 && Zero_cnt>0 && Even_cnt >= 2){
+    		cout<<"red"<<endl;
+    	}
+    	else{
+    		cout<<"cyan"<<endl;
+    	}
+    	
+    }
+    
+    return 0;
+}
