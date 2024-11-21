@@ -1,0 +1,37 @@
+#problem link : https://codeforces.com/problemset/problem/2038/J
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 21-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	char ch;
+    	int num,sum=0;
+    	while(cin>>ch>>num){
+    		
+    		if(ch =='P'){
+    			sum += num;
+    		}
+    		else{
+    			if(num > sum){
+    				cout<<"YES"<<"\n";
+    			}
+    			else{
+    				cout<<"NO"<<"\n";
+    			}
+    			sum -= min(sum , num);
+    		}
+    	}
+    	
+    }
+    return 0;
+}
