@@ -1,0 +1,29 @@
+#Problem link : https://codeforces.com/problemset/problem/282/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 22-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin>>n;
+    int x=0;
+    for(int i=0; i<n; i++){
+    	string s;
+    	cin>>s;
+    	if(s[0]=='+' || s[2]=='+'){
+    		x++;
+    	}
+    	else if(s[0]=='-' || s[2]=='-'){
+    		x--;
+    	}
+    }
+    cout<<x<<"\n";
+    return 0;
+}
