@@ -1,0 +1,67 @@
+#Problem Link :https://codeforces.com/problemset/problem/1783/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 24-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+//reorder like take first than last .....like that 
+//in ex  arr 3,3,6,6 reorder into 3,6,3,6 ../
+//than check if prefsum is euqal to a[i] or not
+
+bool check(vector<int>&ans){
+	int sum=0;
+	for(int i=0; i<ans.size(); i++){
+		if(sum==ans[i]){
+			return false;
+		}
+		else{
+			sum += ans[i];
+		}
+	}
+	return true;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	vector<int>a(n);
+    	for(int i=0; i<n; i++){
+    		cin>>a[i];
+    	}
+    	
+    	vector<int>ans;
+	    int i=0,j=n-1;
+	    while(i<j){
+	    	ans.push_back(a[i]);
+	    	ans.push_back(a[j]);
+	    	i++;
+	   		j--;
+	    }
+	   	if(n%2!=0)
+	   		ans.push_back(a[n/2]);
+	   	
+	   	if(check(ans)){
+	   		cout<<"YES"<<"\n";
+	   		for(auto i:ans){
+	   			cout<<i<<" ";
+	   		}
+	   		cout<<"\n";
+	   	}
+	   	else{
+	   		cout<<"NO"<<"\n";
+	   	}
+	    
+
+    }
+    
+    return 0;
+}
