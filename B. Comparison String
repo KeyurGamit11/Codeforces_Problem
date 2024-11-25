@@ -1,0 +1,44 @@
+#Problem Link : https://codeforces.com/problemset/problem/1837/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 25-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+// cnt of cosective < and > take max of both and +1 is our ans
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	string s;
+    	cin>>s;
+    	int consectivecnt1=0,consectivecnt2=0;
+    	int cnt1=1,cnt2=1;
+    	for(int i=0; i<n; i++){
+    		if(s[i]=='<' && s[i+1] =='<'){
+    			cnt1++;
+    		}
+    		else{
+    			consectivecnt1 = max(cnt1,consectivecnt1);
+    			cnt1=1;
+    		}
+    	}
+    	for(int i=0; i<n; i++){
+    		if(s[i]=='>' && s[i+1] =='>'){
+    			cnt2++;
+    		}
+    		else{
+    			consectivecnt2 = max(cnt2,consectivecnt2);
+    			cnt2=1;
+    		}
+    	}
+    	cout<<max(consectivecnt1,consectivecnt2)+1<<"\n";
+    }
+    return 0;
+}
