@@ -1,0 +1,27 @@
+#Problem Link : https://codeforces.com/contest/1968/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 28-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int x;
+    	cin>>x;
+    	int y=1;
+    	while(__gcd(x,y)+y < x){
+    		y++;
+    	}
+    	cout<<y<<"\n";
+
+    }
+    return 0;
+}
