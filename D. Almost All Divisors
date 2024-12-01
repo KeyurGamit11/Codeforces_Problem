@@ -1,0 +1,48 @@
+#problem Link : https://codeforces.com/problemset/problem/1165/D
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 1-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+//we are given all divisor , need to find min num tak contain all div
+//so we take max , min num from all divisor mulply it that is nu
+//eg. 8,2,6,4,16,3,24 => min=2,max=24 ans=> 48
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll t;
+    cin>>t;
+    while(t--){
+    	ll n;	
+    	cin>>n;
+    	vector<ll>a(n);
+    	
+    	for(ll i=0; i<n;i++){
+    		cin>>a[i];
+    	}
+    	sort(a.begin(),a.end());
+    	ll original_num = a[0]*a[n-1]; //simply min,max num
+    	vector<ll>b; //for take all divisor of original_num for check
+    	for(ll i=2; i<=sqrt(original_num); i++){
+    		if(original_num%i==0){
+    			b.push_back(i);
+    			ll sec_divi=original_num/i;
+    			if(i != (sec_divi)){
+    				b.push_back(sec_divi);
+    			}
+    		}
+    	}
+    	sort(b.begin(),b.end());
+    	if(a==b){
+    		cout<<original_num<<"\n";
+    	}
+    	else{
+    		cout<<-1<<"\n";
+    	}
+    }
+    return 0;
+}
