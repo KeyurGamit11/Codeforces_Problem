@@ -1,0 +1,47 @@
+#Problem Link: https://codeforces.com/contest/2042/problem/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 2-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+//if 1 occur color we take it and max we can take ceil(/2) color
+//so total is 2*ceil(one_occur/2)
+//and if occurance is more than 2 we just simply take all color 
+//our ans = ans=2*(ceil(one_occurance/2)) + More_occurance;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	vector<int>a(n);
+    	for(int i=0; i<n; i++){
+    		cin>>a[i];
+    	}
+    	map<int,int>mp;
+    	for(auto &i:a){
+    		mp[i]++;
+    	}
+    	double one_occurance=0,More_occurance=0;
+    	for(auto &i:mp){
+    		if(i.second==1){
+    			one_occurance++;
+    		}
+    		if(i.second>=2){
+    			More_occurance++;
+    		}
+    	}
+    	//cout<<one_occurance<<" "<<More_occurance<<endl;
+    	double ans=2*(ceil(one_occurance/2)) + More_occurance;
+    	cout<<ans<<"\n";
+
+    }
+    return 0;
+}
