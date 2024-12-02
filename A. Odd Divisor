@@ -1,0 +1,30 @@
+#Problem Link : https://codeforces.com/contest/1475/problem/A
+#code :
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main(){
+	ios_base::sync_with_stdio(false); 
+    cin.tie(NULL);
+    ll t;
+    cin>>t;
+    while(t--){
+       ll n;
+       cin>>n;
+       while(n%2==0){
+         n /=2; //devide by 2....
+       }
+       //means n is 2^n so there is no odd divisor
+       //for eg. n=8 -> n=4 -> n=2 -> n=1
+       //for eg. n=6 -> n=3
+       if(n==1){
+         cout<<"NO"<<"\n";
+       }
+       else{
+         cout<<"YES"<<"\n";
+       }
+
+    }
+    return 0;
+}
