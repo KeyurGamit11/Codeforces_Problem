@@ -1,0 +1,34 @@
+#Problem Link : https://codeforces.com/contest/2042/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 2-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n,k;
+    	cin>>n>>k;
+    	vector<int>a(n);
+    	for(int i=0; i<n; i++){
+    		cin>>a[i];
+    	}
+    	sort(a.rbegin(),a.rend());
+    	int total=0;
+    	for(int i=0; i<n; i++){
+    		if(total+a[i]>k){
+    			break;
+    		}
+    		total+=a[i];
+    	}
+    	cout<<abs(total-k)<<"\n";
+    }
+    return 0;
+}
