@@ -1,0 +1,40 @@
+#Problem Link: https://codeforces.com/contest/2040/problem/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 8-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+//so here if u see pattern i->4->10>22..(2*X+2)(look at problem statement and dry run)
+//we are given all 0 in arr len n 
+//we need to precompute all ans in arr
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    //pre-compute all ans 
+    int ans[100005];
+    ans[1]=1;
+    int x=1,j=2;
+    for(int i=2; j<=1e5; i++){
+        x = 2*x+2;
+        while(j<=x && j<= 1e5){
+            ans[j]=i;
+            j++;
+        }
+    }
+    int t;
+    cin>>t;
+    while(t--){
+    	int n;
+    	cin>>n;
+    	
+    	cout<<ans[n]<<"\n";
+    }
+    return 0;
+}
