@@ -1,0 +1,44 @@
+#Problem Link : https://codeforces.com/problemset/problem/131/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 12-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    string s;
+    cin>>s;
+    bool all_cap=true;
+    for(int i=1; i<s.size(); i++){
+    	if(!isupper(s[i])){
+    		all_cap = false;
+    		break;
+    	}
+    }
+    string ans=s;
+    bool ch=false;
+    if((islower(s[0]) && all_cap)||all_cap){
+    			
+    	ch = true;
+    	for(int i=0; i<s.size(); i++){
+    		if(islower(s[i])){
+    			ans[i] = toupper(s[i]);
+    		}
+    		else{
+    			ans[i] = tolower(s[i]);
+    		}
+    	}
+    }
+    if(!ch){
+    	cout<<s<<"\n";
+    }
+    else{
+    	cout<<ans<<"\n";
+    }
+    return 0;
+}
