@@ -1,0 +1,31 @@
+#Problem Link : https://codeforces.com/problemset/problem/26/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 14-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+//we just count valid parentheses
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    string s;
+    cin>>s;
+    stack<char>st;
+    int cnt=0;
+    for(auto &ch:s){
+    	if(!st.empty()&&ch==')'&&st.top()=='('){
+    		st.pop();
+    		cnt+=2;
+    	}
+    	else{
+    		st.push(ch);
+    	}
+    }
+    cout<<cnt<<"\n";
+    return 0;
+}
