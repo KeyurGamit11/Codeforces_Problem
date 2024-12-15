@@ -1,0 +1,37 @@
+#Problem Link : https://codeforces.com/contest/2044/problem/C
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 15-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	ll m,a,b,c;
+    	cin>>m>>a>>b>>c;
+    	ll total_seat=m*2;
+    	ll maxi=0;
+    	ll row1=m;
+    	ll row2=m;
+
+    	ll row1_use = min(a,row1);
+    	
+    	maxi += row1_use;
+    	row1 -= row1_use;
+
+    	ll row2_use = min(b,row2);
+    	maxi += row2_use;
+    	row2 -= row2_use;
+    	ll no_pref = min(c, row1+row2);
+    	maxi += no_pref;
+    	cout<<maxi<<"\n";
+    }
+    return 0;
+}
