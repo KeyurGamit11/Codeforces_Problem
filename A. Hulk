@@ -1,0 +1,35 @@
+#Problem Link : https://codeforces.com/problemset/problem/705/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 18-11-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin>>n;
+    int x=0;
+    string s="";
+    bool ch=false;
+    for(int i=1; i<=n; i++){
+    	if(i%2==1){
+    		s += "I hate";
+    	}
+    	else{
+    		s += "I love";
+    	}
+    	if(i<n){
+    		s += " that "; //means i is not reach till n
+    	}
+    	else{
+    		s += " it";//means i reach to last n
+    	}
+    }
+    cout<<s<<"\n";
+    return 0;
+}
