@@ -1,0 +1,36 @@
+#PRoblem Link : https://codeforces.com/problemset/problem/427/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 19-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    int Crime=0,police=0;
+    for(int i=0; i<n; i++){
+    	cin>>a[i];
+    }
+    for(int i=0; i<n; i++){
+    	if(a[i]!=-1){
+    		police+=a[i];
+    	}
+    	else if(a[i]==-1){
+    		if(police>0){
+    			police--;
+    		}
+    		else{
+    			Crime++;
+    		}
+    	}
+    }
+    cout<<Crime<<"\n";
+    return 0;
+}
