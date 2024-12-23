@@ -1,0 +1,42 @@
+#Problem Link : https://codeforces.com/problemset/problem/75/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 23-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+string RemoveZeros(const string &s){
+	string res="";
+	 for(auto c:s){
+    	if(c != '0'){
+    		res += c;
+    	}
+    }
+    return res;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll a,b;
+    cin>>a>>b;
+    ll c= a+b;
+    string s1 = to_string(a);
+    string s2 = to_string(b);
+    string s3 = to_string(c);
+    
+    string ans1=RemoveZeros(s1);
+    string ans2=RemoveZeros(s2);
+    string ans3=RemoveZeros(s3);
+   
+    if(stoll(ans1)+stoll(ans2) == stoll(ans3)){
+    	cout<<"YES"<<"\n";
+    }
+    else{
+    	cout<<"NO"<<"\n";
+    }
+    return 0;
+}
