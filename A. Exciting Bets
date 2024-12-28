@@ -1,0 +1,30 @@
+#Problem Link : https://codeforces.com/problemset/problem/1543/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 28-12-24
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	ll a,b;
+    	cin>>a>>b;
+    	if(a==b){
+    		cout<<0<<" "<<0<<"\n";
+    	}
+    	else{
+	    	ll moves =abs(a-b);
+	    	ll Excite = min(a%moves , moves-a%moves);
+    		cout<<moves<<" "<<Excite<<"\n";
+    	}
+
+    }
+    return 0;
+}
