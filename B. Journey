@@ -1,0 +1,40 @@
+#Problem Link : https://codeforces.com/contest/2051/problem/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 03-01-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	ll n,a,b,c;
+    	cin>>n>>a>>b>>c;
+    	//process is like that
+    	//a,b,c,a,b,c,a,b,c.... and in the end a or a+b or a+b+c left
+    	//so we caluculate saparate 
+    	ll total_days = 3*(n/(a+b+c));
+    	n %= (a+b+c);
+
+    	if(n>0){
+    		total_days++;
+    		n -= a;
+    	}
+    	if(n>0){
+    		total_days++;
+    		n-= b;
+    	}
+    	if(n>0){
+    		total_days++;
+    		n -= c;
+    	}
+    	cout<<total_days<<"\n";
+    }
+    return 0;
+}
