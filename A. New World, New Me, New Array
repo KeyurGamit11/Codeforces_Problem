@@ -1,0 +1,34 @@
+#Problem Link : https://codeforces.com/contest/2072/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 26-02-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int n,k,p;
+    	cin>>n>>k>>p;
+    	int maxi_sum = n*p;
+    	if(maxi_sum < abs(k)){
+    		cout<<-1<<"\n";
+    	}
+    	else{
+    		if(k%p==0){
+    			cout<<abs(k/p)<<"\n";
+    		}
+    		else if(k%p != 0){
+    			cout<<abs(k/p) + 1<<"\n";
+    		}
+    	}
+
+    }
+    return 0;
+}
