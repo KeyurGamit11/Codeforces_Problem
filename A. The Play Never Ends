@@ -1,0 +1,27 @@
+#Problem Link : https://codeforces.com/contest/2071/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 02-03-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll t;
+    cin>>t;
+    while(t--){
+    	ll n;
+    	cin>>n;
+    	if(n%3==1){ //follow 3k+1 sequance
+    		cout<<"YES"<<"\n";
+    	}
+    	else{
+    		cout<<"NO"<<"\n";
+    	}
+    }
+    return 0;
+}
