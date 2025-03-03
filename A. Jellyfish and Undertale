@@ -1,0 +1,30 @@
+#Problem Link : https://codeforces.com/problemset/problem/1875/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 03-03-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	ll a,b,n;
+    	cin>>a>>b>>n;
+    	vector<ll>x(n);
+    	for(ll i=0; i<n; i++){
+    		cin>>x[i];
+    	}
+    	ll timer = b;
+    	for(ll i=0; i<n; i++){
+    		timer += min(x[i] , a-1); //a-1 for make value maxi
+    	}
+    	cout<<timer<<"\n";
+    }
+    return 0;
+}
