@@ -1,0 +1,23 @@
+#Problem Link : https://codeforces.com/problemset/problem/1061/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 05-03-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n,s;
+    cin>>n>>s;
+    if(s%n == 0){
+    	cout<<s/n<<"\n";
+    }
+    else{
+    	cout<<(s/n)+1<<"\n";
+    }
+    return 0;
+}
