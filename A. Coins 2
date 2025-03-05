@@ -1,0 +1,32 @@
+#Problem Link : https://codeforces.com/problemset/problem/1814/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 05-03-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+//we have 2 denomenator and k burles
+//2⋅x+k⋅y=n
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll t;
+    cin>>t;
+    while(t--){
+    	ll n,k;
+    	cin>>n>>k;
+    	ll remain = n-k;
+    	if(remain%2==0 || n%k==0 || n%2==0){ //we have 2 denomenator
+    		cout<<"YES"<<"\n";
+    	}
+    	else{
+    		cout<<"NO"<<"\n";
+    	}
+    }
+    return 0;
+}
