@@ -1,0 +1,27 @@
+#Problem Link : https://codeforces.com/contest/2074/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 22-03-25
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	int l,r,d,u;
+    	cin>>l>>r>>d>>u;
+    	if(l==r && r==d && d == u&& l==d && u==r && l==u && d==u){
+    		cout<<"YES"<<"\n";
+    	}
+    	else{
+    		cout<<"NO"<<"\n";
+    	}
+    }
+    return 0;
+}
