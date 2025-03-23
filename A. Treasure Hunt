@@ -1,0 +1,30 @@
+#Problem Link : https://codeforces.com/contest/2090/problem/A
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 23-03-25 
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	ll x,y,a;
+    	cin>>x>>y>>a;
+    	ll total = x+y;
+    	ll mod = a%total;
+    	//cout<<mod;
+    	if(mod < x){
+    		cout<<"NO"<<"\n";
+    	}
+    	else{
+    		cout<<"YES"<<"\n";
+    	}
+    }
+    return 0;
+}
