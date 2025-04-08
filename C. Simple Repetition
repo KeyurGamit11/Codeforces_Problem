@@ -1,0 +1,52 @@
+#Problem Link : https://codeforces.com/contest/2093/problem/C
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 08-04-2025
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+
+
+bool isPrime(ll num) {
+    
+     if (num < 2) return false;
+    if (num == 2) return true;
+    if (num % 2 == 0) return false;
+
+    for (ll i = 3; i * i <= num; i += 2) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	ll x,k;
+    	cin>>x>>k;
+    	if(k==1 || x==1){
+            string s;
+            for(int i=0; i<k; i++){
+                s += to_string(x);
+            }
+            ll n = stoll(s);
+            if(isPrime(n)){
+                cout<<"YES"<<"\n";
+            }
+            else{
+                cout<<"NO"<<"\n";
+            }
+    	}
+        else{
+            cout<<"NO"<<"\n";
+        }
+    }
+    return 0;
+}
