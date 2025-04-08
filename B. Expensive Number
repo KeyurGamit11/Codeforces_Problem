@@ -1,0 +1,33 @@
+#Problem Link : https://codeforces.com/contest/2093/problem/b
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 08-04-2025
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin>>t;
+    while(t--){
+    	string s;
+    	cin>>s;
+    	int n = s.size();
+    	int cnt=0,Zero_cnt=0;
+    	for(int i=0; i<s.size(); i++){
+    		if(s[i] == '0'){
+    			Zero_cnt++;
+    		}
+    		else{
+    			cnt = max(Zero_cnt+1,cnt);
+    		}
+    	}
+    	cout<<n- cnt<<"\n";
+    	
+    }
+    return 0;
+}
