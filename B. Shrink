@@ -1,0 +1,39 @@
+#Problem Link : https://codeforces.com/contest/2117/problem/B
+#code:
+/**
+ *    author:  Keyur11
+ *    created: 15-06-2025
+**/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n, 0);
+        
+        // Place largest number at center
+        int mid = (n % 2 == 0) ? n / 2 - 1 : n / 2;
+        a[mid] = n;
+        
+        // Place smallest number at end
+        a[n - 1] = 1;
+        
+        int cur = 2;
+        for (int i = 0; i < n; i++) {
+            if (a[i] == 0) {
+                a[i] = cur++;
+            }
+        }
+        
+        for (int x : a) cout << x << " ";
+        cout << "\n";
+    }
+    return 0;
+}
